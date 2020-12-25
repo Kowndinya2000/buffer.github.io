@@ -1,0 +1,201 @@
+<html lang="en"><head>
+
+    <meta charset="UTF-8">
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>Loading Git Q</title> 
+    
+    
+    
+    
+  <style>
+  .spinner {
+    --spinner-size: 5;
+    --line-color: #0ebeff;
+    --line-alpha: 1;
+    --ring-color: #000000;
+    --ring-alpha: .3;
+    --ring-size: 10;
+  
+    font-size: calc(var(--spinner-size) * 1em);
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+  }
+  .spinner .line {
+    fill: none;
+    stroke: var(--line-color);
+    stroke-width: var(--ring-size);
+    opacity: var(--line-alpha);
+    stroke-linecap: round;
+    transform-origin: 50% 50%;
+    transform: rotate3d(0, 0, 1, 0deg);
+    -webkit-animation: 
+      2156ms spinner-arc ease-in-out infinite,
+      1829ms spinner-rotate linear infinite;
+            animation: 
+      2156ms spinner-arc ease-in-out infinite,
+      1829ms spinner-rotate linear infinite;
+  }
+  .spinner .ring {
+    fill: none;
+    stroke: var(--ring-color);
+    stroke-width: var(--ring-size);
+    opacity: var(--ring-alpha);
+  }
+  @-webkit-keyframes spinner-rotate {
+    to { transform: rotate3d(0, 0, 1, 360deg); }
+  }
+  @keyframes spinner-rotate {
+    to { transform: rotate3d(0, 0, 1, 360deg); }
+  }
+  @-webkit-keyframes spinner-arc {
+    from { stroke-dasharray: 0 150; stroke-dashoffset: 0; }
+    to { stroke-dasharray: 100 150; stroke-dashoffset: -140; }
+  }
+  @keyframes spinner-arc {
+    from { stroke-dasharray: 0 150; stroke-dashoffset: 0; }
+    to { stroke-dasharray: 100 150; stroke-dashoffset: -140; }
+  }
+  
+  /* spinner motion based on https://codepen.io/supah/pen/BjYLdW */
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* irrelevant to spinner */
+  body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    font-family: sans-serif;
+    transition: 450ms ease-out;
+    color: #fff;
+    background: #212325;
+  }
+  body.light {
+    color: #333;
+    background: #ededed;
+  }
+  .preview {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .controls {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    text-align: center;
+    background: rgba(128, 128, 128, .15);
+    border-left: 2px solid rgba(128, 128, 128, .5);
+    padding: 2em;
+  }
+  .code {
+    flex: 1;
+    position: relative;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    background: rgba(128, 128, 128, .15);
+    border-right: 2px solid rgba(128, 128, 128, .5);
+    max-width: 0;
+    overflow: hidden;
+    padding: 2em;
+    transition: max-width 450ms ease-out 100ms;
+  }
+  .code:hover {
+    padding: 2em;
+    max-width: 65vw;
+    overflow: auto;
+  }
+  
+  input[type="checkbox"] {
+    margin: 0;
+    font-size: 1.5em;
+  }
+  </style>
+  
+    <script>
+    window.console = window.console || function(t) {};
+  </script>
+  
+    
+    
+    <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  
+  
+  </head>
+  
+  <body translate="no" data-new-gr-c-s-check-loaded="14.990.0" data-gr-ext-installed="">
+
+  <div class="preview">
+    <svg viewBox="0 0 50 50" class="spinner">
+      <circle class="ring" cx="25" cy="25" r="22.5"></circle>
+      <circle class="line" cx="25" cy="25" r="22.5"></circle>
+    </svg>
+  </div>
+      <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+  
+    
+        <script id="rendered-js">
+  // control helpers
+  const loader = document.querySelector('svg.spinner');
+  const body = document.querySelector('body');
+  let setProperty = (selector, property, value) => {
+    loader.style.setProperty(property, value);
+    let elements = document.querySelectorAll(selector);
+    elements.forEach(element => element.innerHTML = value);
+  };
+  
+  let toggleDarkness = () => body.classList.toggle('light');
+  //# sourceURL=pen.js
+      </script>
+  
+    
+  
+  
+  
+  
+   
+  </body></html>
